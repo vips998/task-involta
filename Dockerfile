@@ -1,4 +1,4 @@
-FROM task-involta
+FROM node
 
 WORKDIR /app
 
