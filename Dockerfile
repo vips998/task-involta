@@ -1,11 +1,13 @@
-FROM node
+FROM node:14-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY package.json .
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 3000
 
-CMD ["node","App.js"]
+CMD ["npm", "start"]
