@@ -5,9 +5,4 @@ services:
     image: frontend-image
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
-  backend:
-    image: backend-image
-    ports:
-      - "3010:3010"
+
