@@ -64,8 +64,8 @@ import notifier from "codex-notifier";
                 this.allBlocks.forEach((item, index) => {
                     const isToolboxOpened = document.querySelector(".codex-editor--toolbox-opened") ?? false;
                     const isSelection = document.querySelector(".ce-block--selected") ?? false;
-                    const isOnlyFixedBlocks = this.getLastIndexOfPinnedBlocks() + 1 == this.allBlocks.length
-                    if (e.composedPath().indexOf(item) != -1 && index in Object.keys(this._pinned) && !isSelection && !isToolboxOpened || isOnlyFixedBlocks){
+                    const isOnlyFixedBlocks = this.getLastIndexOfPinnedBlocks() + 1 === this.allBlocks.length
+                    if (((e.composedPath().indexOf(item) !== -1) && (index in Object.keys(this._pinned)) && (!isSelection) && (!isToolboxOpened)) || isOnlyFixedBlocks){
                         flag = true;
                     }
                 if (flag === true)
@@ -160,7 +160,7 @@ import notifier from "codex-notifier";
                     break;
                 
                 case 'block-moved':
-                    if (event.detail.toIndex == lastIndexOfPinnedBlocks){
+                    if (event.detail.toIndex === lastIndexOfPinnedBlocks){
                         notifier.show({
                             message:"Данный блок нельзя менять местами с закрепленным",
                             style: "error",
